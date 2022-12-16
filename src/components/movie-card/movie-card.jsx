@@ -6,7 +6,7 @@ import './movie-card.scss';
 
 export class MovieCard extends React.Component {
     render() {
-        const { movieData, onMovieClick } = this.props;
+        const { movie, onMovieClick } = this.props;
 
         return (
             <Card className="text-wrap">
@@ -14,13 +14,13 @@ export class MovieCard extends React.Component {
                     variant="top"
                     crossOrigin="anonymous | use-credentials"
                     Access-Control-Allow-Origin
-                    src={movieData.ImagePath}
+                    src={movie?.ImagePath}
                 />
                 <Card.Body>
-                    <Card.Title>{movieData.Title}</Card.Title>
-                    <Card.Text>{movieData.Description}</Card.Text>
+                    <Card.Title>{movie?.Title}</Card.Title>
+                    <Card.Text>{movie?.Description}</Card.Text>
                     <Button
-                        onClick={() => onMovieClick(movieData)}
+                        onClick={() => onMovieClick(movie)}
                         variant="link"
                     >
                         Open
